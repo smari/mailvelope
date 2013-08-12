@@ -330,7 +330,7 @@ define(function (require, exports, module) {
         try {
           response.result = model[request.method].apply(model, request.args);
         } catch (e) {
-          console.log('error in viewmodel: ', e);
+          console.log('error in viewmodel: ', e, request.method);
           response.error = e;
         }
         if (response.result !== undefined || response.error || request.callback) {
